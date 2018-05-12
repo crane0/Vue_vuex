@@ -1,29 +1,40 @@
 <template>
-  <div>
-    <!--<p>clicked:{{$store.state.count}}次，count是{{oddOrEven}}</p>-->
-    <p>clicked:{{count}}次，count是{{oddOrEven}}</p>
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
-    <button @click="incrementIfOdd">奇数+</button>
-    <button @click="incrementAsync">Async+</button>
+  <div class="todo-container">
+    <div class="todo-wrap">
+      <TodoHeader></TodoHeader>
+      <TodoList></TodoList>
+      <TodoFooter></TodoFooter>
+    </div>
   </div>
 </template>
 
 <script>
-  import {mapActions, mapGetters, mapState} from 'vuex'
+  import TodoHeader from './components/todoHeader'
+  import TodoList from './components/todoList'
+  import TodoFooter from './components/todoFooter'
+  import storageUtils from './utils/storageUtils'
 
 
   export default {
     name: 'App',
-    computed: {
-      ...mapGetters(['oddOrEven', 'count'])
-    },
-    methods: {
-      ...mapActions(['increment', 'decrement', 'incrementIfOdd', 'incrementAsync'])
+
+    components: {
+      TodoHeader,
+      TodoList,
+      TodoFooter
     }
   }
-
 </script>
 
 <style>
+  .todo-container {
+    width: 600px;
+    margin: 0 auto;
+  }
+  .todo-container .todo-wrap {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
 </style>
+
