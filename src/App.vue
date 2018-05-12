@@ -1,40 +1,23 @@
 <template>
-  <div class="todo-container">
-    <div class="todo-wrap">
-      <TodoHeader></TodoHeader>
-      <TodoList></TodoList>
-      <TodoFooter></TodoFooter>
-    </div>
+  <div class="container">
+    <Search></Search>
+    <UserMain></UserMain>
   </div>
 </template>
 
 <script>
-  import TodoHeader from './components/todoHeader'
-  import TodoList from './components/todoList'
-  import TodoFooter from './components/todoFooter'
-  import storageUtils from './utils/storageUtils'
-
+  import Main from './components/Main'
+  import Search from './components/Search'
 
   export default {
-    name: 'App',
-
     components: {
-      TodoHeader,
-      TodoList,
-      TodoFooter
+      Search,
+      //不直接用Main作为组件标签，是因为Main是关键字
+      UserMain: Main
     }
   }
 </script>
 
 <style>
-  .todo-container {
-    width: 600px;
-    margin: 0 auto;
-  }
-  .todo-container .todo-wrap {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
 </style>
 

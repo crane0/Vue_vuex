@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--<p>clicked:{{$store.state.count}}次，count是{{oddOrEven}}</p>-->
+    <!--<p>clicked:{{$vuex.state.count}}次，count是{{oddOrEven}}</p>-->
     <p>clicked:{{count}}次，count是{{oddOrEven}}</p>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
