@@ -3,7 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-//state对象，类似于data
+/*
+* state对象，类似于data
+* */
 const state = {
   count: 0
 }
@@ -25,6 +27,7 @@ const mutations = {
 * action通过commit()，触发 mutation的调用，间接更新 state
 *   commit('mutation函数名')
 * 一个方法就是一个action
+* 注意传递的commit函数要使用对象结构出来！！！
 * */
 const actions = {
   increment ({commit}) {

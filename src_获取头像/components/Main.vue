@@ -18,7 +18,6 @@
 <script>
 
   import {mapState} from 'vuex'
-
   export default {
     computed: {
       ...mapState(['initView', 'loading', 'users', 'errorMsg'])
